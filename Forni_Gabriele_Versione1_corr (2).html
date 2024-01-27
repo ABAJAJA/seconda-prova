@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+       body{
+        background-color: gray;   
+
+       }
+    </style>
+    
+    <title>Cartoleria Franchini</title>
+    <script stype="text/javascript">
+    var risultato = 0
+        function calcolascontrino() {
+         
+            var qta = parseInt(document.getElementById("qta").value);
+            var prodotto = document.getElementById("prodotto").value;
+            var valore
+            
+            var prodotto = {
+                "TV" : 350,
+                "Radio" : 150,
+                "Telefono" : 200,
+            };
+         
+            risultato = qta * prodotto;
+
+            document.getElementById("risultato").innerHTML = "TOT: " + risultato;
+            document.getElementById("scontrino").innerHTML = "prd: " + prodotto +" prz: " + valore +" qta: "+ qta +" valore: "+risultato;
+        }
+        function cancellascontrino()
+        {
+            risultato=0
+            document.getElementById("scontrino").innerHTML = " "
+
+            document.getElementById("risultato").innerHTML = " TOT : " + risultato
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Cartoleria Franchini</h1>
+
+    <label for="prodotto">Prodotto:</label>
+    <select id="prodotto">
+        <option value="TV">TV</option>
+        <option value="Radio">Radio</option>
+        <option value="Telefono">Telefono</option>
+    </select>
+    <br><br>
+    <label for="qta">qta:</label>
+    <input type="number" id="qta">
+
+    <br><br>
+    <button onclick="calcolascontrino()">seleziona</button>
+    <button onclick="cancellascontrino()">cancella</button>
+    <p id="risultato"></p>
+    <p1 id="scontrino"></p1>
+</body>
+
+</html>
